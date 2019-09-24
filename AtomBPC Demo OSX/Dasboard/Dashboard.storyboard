@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dashboard View Controller-->
+        <scene sceneID="5cA-Wb-lQ5">
+            <objects>
+                <customObject id="je2-a4-LRf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController identifier="dashboardViewController" storyboardIdentifier="dashboardViewController" id="W8X-zb-4A9" customClass="DashboardViewController" customModule="AtomBPC_Demo_OSX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ZQf-ag-hpq">
+                        <rect key="frame" x="0.0" y="0.0" width="534" height="347"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASB-SL-UK5">
+                                <rect key="frame" x="21" y="305" width="183" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" alignment="left" title="Select Package (optional) :" id="yld-4H-12S">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="0.0" colorSpace="calibratedRGB"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="txtFieldProtocolName:" target="W8X-zb-4A9" id="Rhu-62-DZb"/>
+                                </connections>
+                            </textField>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R3C-8a-OHq">
+                                <rect key="frame" x="241" y="301" width="247" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mVE-Wp-tfW">
+                                        <rect key="frame" x="63" y="3" width="121" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" id="tan-93-4Vn">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <action selector="txtFieldProtocolName:" target="W8X-zb-4A9" id="hsB-jk-ljv"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </customView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUg-Wl-9gO">
+                                <rect key="frame" x="242" y="301" width="246" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSTouchBarDownloadTemplate" imagePosition="trailing" alignment="center" imageScaling="proportionallyDown" inset="2" id="0Rz-Ps-wKh">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <color key="contentTintColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <segue destination="XkK-Hh-3RR" kind="popover" popoverAnchorView="dUg-Wl-9gO" popoverBehavior="t" preferredEdge="maxY" id="ZLy-Oo-C2b"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSa-Ek-xnq">
+                                <rect key="frame" x="21" y="265" width="121" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" alignment="left" title="Select Protocol :" id="7z1-Wj-7b3">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="0.0" colorSpace="calibratedRGB"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="txtFieldProtocolName:" target="W8X-zb-4A9" id="4Fy-5h-fHs"/>
+                                </connections>
+                            </textField>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nx9-zs-c7B">
+                                <rect key="frame" x="241" y="262" width="247" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gsx-ej-xkW">
+                                        <rect key="frame" x="63" y="3" width="122" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" id="ClZ-Xi-YEK">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <action selector="txtFieldProtocolName:" target="W8X-zb-4A9" id="eOR-a0-kv5"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </customView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rsx-4U-Oes">
+                                <rect key="frame" x="243" y="262" width="245" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSTouchBarDownloadTemplate" imagePosition="trailing" alignment="center" imageScaling="proportionallyDown" inset="2" id="G6s-iC-LC9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <color key="contentTintColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <segue destination="8iG-d0-meb" kind="popover" popoverAnchorView="Rsx-4U-Oes" popoverBehavior="t" preferredEdge="maxY" id="jlx-fj-UmY"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-61-Q4W">
+                                <rect key="frame" x="21" y="213" width="145" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" alignment="left" title="Select Country :" id="OLN-Eg-2hm">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="0.0" colorSpace="calibratedRGB"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xdz-lD-5rV">
+                                <rect key="frame" x="241" y="220" width="247" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdg-ij-gmd">
+                                        <rect key="frame" x="63" y="3" width="122" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" alignment="center" id="QbX-UF-Qfq">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                            </customView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VOB-x6-Bz7">
+                                <rect key="frame" x="243" y="220" width="245" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSTouchBarDownloadTemplate" imagePosition="trailing" alignment="center" imageScaling="proportionallyDown" inset="2" id="sVr-FK-gum">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <color key="contentTintColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <action selector="BtnGetCountries:" target="W8X-zb-4A9" id="4qv-Xv-UcT"/>
+                                    <segue destination="Xb0-Wx-xN6" kind="popover" popoverAnchorView="VOB-x6-Bz7" popoverBehavior="t" preferredEdge="maxY" id="iz8-eG-4cR"/>
+                                </connections>
+                            </button>
+                            <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PP8-Iq-Ibm">
+                                <rect key="frame" x="0.0" y="0.0" width="534" height="99"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="jtT-gr-KKa">
+                                    <rect key="frame" x="0.0" y="0.0" width="519" height="99"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView ambiguous="YES" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="6Nu-5C-3bG">
+                                            <rect key="frame" x="0.0" y="0.0" width="519" height="99"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="519" height="99"/>
+                                            <size key="maxSize" width="519" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="bfF-ek-YH5">
+                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="X6F-FS-WFQ">
+                                    <rect key="frame" x="519" y="0.0" width="15" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h7v-qO-MKL">
+                                <rect key="frame" x="179" y="172" width="131" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="U1H-ai-SxD">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="btnConnectVPN:" target="W8X-zb-4A9" id="5wO-C4-fMQ"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="btnConnect" destination="h7v-qO-MKL" id="SX4-5Z-z1Z"/>
+                        <outlet property="btnListing" destination="VOB-x6-Bz7" id="jng-us-YEQ"/>
+                        <outlet property="btnPackageListing" destination="dUg-Wl-9gO" id="Mi8-pt-ikZ"/>
+                        <outlet property="btnProtocolListing" destination="Rsx-4U-Oes" id="NmZ-DA-pxx"/>
+                        <outlet property="customViewMainView" destination="xdz-lD-5rV" id="k3D-SM-vu1"/>
+                        <outlet property="customViewPackage" destination="R3C-8a-OHq" id="B3H-TB-Ggl"/>
+                        <outlet property="customViewProtocol" destination="nx9-zs-c7B" id="xHg-cc-Qmv"/>
+                        <outlet property="textFieldCountryName" destination="wdg-ij-gmd" id="0vv-iW-vFk"/>
+                        <outlet property="txtFieldSelectPackage" destination="mVE-Wp-tfW" id="c7k-bR-DEQ"/>
+                        <outlet property="txtFieldSelectedProtocol" destination="Gsx-ej-xkW" id="7bc-HE-T53"/>
+                        <outlet property="txtViewLogs" destination="6Nu-5C-3bG" id="1It-Hj-aHU"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1347" y="427.5"/>
+        </scene>
+        <!--packageListing-->
+        <scene sceneID="kRq-SI-C9j">
+            <objects>
+                <customObject id="USc-pt-Ydy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <controllerPlaceholder storyboardIdentifier="packageListing" storyboardName="PackagesListing" referencedIdentifier="packageListing" id="XkK-Hh-3RR" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="1174" y="779"/>
+        </scene>
+        <!--ProtocolsListing-->
+        <scene sceneID="Zm8-ut-VNs">
+            <objects>
+                <customObject id="VMx-ir-rJT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <controllerPlaceholder storyboardIdentifier="protocolsListingSB" storyboardName="ProtocolsListing" id="8iG-d0-meb" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="1348" y="779"/>
+        </scene>
+        <!--serversListing-->
+        <scene sceneID="4j2-of-IKF">
+            <objects>
+                <customObject id="mCp-pU-3x3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <controllerPlaceholder storyboardIdentifier="serversListing" storyboardName="Countries" referencedIdentifier="serversListing" id="Xb0-Wx-xN6" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="1511" y="779"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NSTouchBarDownloadTemplate" width="18" height="30"/>
+    </resources>
+</document>
