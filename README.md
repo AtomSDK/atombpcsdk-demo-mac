@@ -11,8 +11,9 @@ BPC SDK provides the customisable inventory that means you can offer different s
 
 ## Compatibility
 
--   Compatible with Xcode 10.2.1 and OS X 10.10 and later
--   Compatible with ATOM SDK Version 2.3 and onwards
+-   OSX 10.10+
+-   Xcode 10.2+
+-   ATOM SDK 2.3+
 
 ## Installation
 
@@ -42,7 +43,7 @@ PS: AtomBPCManager is a singleton, and must be initialised before accessing its 
 
 # Get inventory with the help of package
 
-BPC SDK offers get inventory methods , that are associate with some packages .
+BPC SDK offers get inventory methods, that are associate with some packages .
   
 
 ### Get all Packages
