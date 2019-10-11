@@ -6,11 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		vHH+cbTa/OVEIpHRNAxAnF6qqjo=
-		</data>
-		<key>Resources/mockData.json</key>
-		<data>
-		RLlyQ2k/jUvW+cZzQTbPxffw8aY=
+		7+iS7W2Yqy/jQ5jLmkBzZAbnge4=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -19,11 +15,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3pG6EW0cBDqd7AbJ7IFJVyzTFkI=
+			puVwyuLmdynEPSaeukrrS6HjoDM=
 			</data>
 			<key>hash2</key>
 			<data>
-			8GC9G116uvDOXkYha+AvR/A8d3eouFYARK9ou/OKpcI=
+			XsVFxRHJpjV61bYM7+gvjf0vKGpvbKGwm5UbO2mtaNw=
 			</data>
 		</dict>
 		<key>Headers/AtomBPC_OSX.h</key>
@@ -41,44 +37,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pFpUcG4z/iYGQ3EGLOQqEqChQZA=
+			DDSBu0UZY7YA34dL6Q7vMQVAxfM=
 			</data>
 			<key>hash2</key>
 			<data>
-			LwqrYx01pmNhEOA9VL+iYoiAMKrwjHiYama5A4GJbBI=
+			Jm8heAuFBKr2Q3z/sAXQwmIdKz5zL1ERSV2zVlE9tTg=
 			</data>
 		</dict>
 		<key>Modules/AtomBPC.swiftmodule/x86_64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9dI0QtkSWlgYAB3zFy2eyEAOkQg=
+			HDHQwVRG4QlpEqmhJiiiexLZNOQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			QwhkZsdN1x+lQgc8sKi7OgFdbyUpnvKXeTm86uORdDU=
+			+PwhzA1pP7T52VnW/kDHt8QcYy7OFaHWoDXzVTFjD5A=
 			</data>
 		</dict>
 		<key>Modules/AtomBPC.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pFpUcG4z/iYGQ3EGLOQqEqChQZA=
+			DDSBu0UZY7YA34dL6Q7vMQVAxfM=
 			</data>
 			<key>hash2</key>
 			<data>
-			LwqrYx01pmNhEOA9VL+iYoiAMKrwjHiYama5A4GJbBI=
+			Jm8heAuFBKr2Q3z/sAXQwmIdKz5zL1ERSV2zVlE9tTg=
 			</data>
 		</dict>
 		<key>Modules/AtomBPC.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9dI0QtkSWlgYAB3zFy2eyEAOkQg=
+			HDHQwVRG4QlpEqmhJiiiexLZNOQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			QwhkZsdN1x+lQgc8sKi7OgFdbyUpnvKXeTm86uORdDU=
+			+PwhzA1pP7T52VnW/kDHt8QcYy7OFaHWoDXzVTFjD5A=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -96,22 +92,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vHH+cbTa/OVEIpHRNAxAnF6qqjo=
+			7+iS7W2Yqy/jQ5jLmkBzZAbnge4=
 			</data>
 			<key>hash2</key>
 			<data>
-			P9R/izfr2aySXVTSbMrrQBtxwROqV6GZMK8dJqp4WwQ=
-			</data>
-		</dict>
-		<key>Resources/mockData.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			RLlyQ2k/jUvW+cZzQTbPxffw8aY=
-			</data>
-			<key>hash2</key>
-			<data>
-			+mA5G38A0vxjPGP7FM+INRWgwn8f216/ftIKpX2cV3M=
+			oFbxD+RTeaBVf7hOg8ceNxsU/aerQriNe8d7pHX55UA=
 			</data>
 		</dict>
 	</dict>

@@ -12,16 +12,25 @@ import AtomBPC
 
 class CountriesService: CountriesServiceProtocol {
     
-    func getCountries(protocolSlug: String, callBack: @escaping ([AtomCountry]?, BPCException?) -> Void) {
-        HelperMethods().appDelegate.bpcManager?.getCountriesByProtocol(protocolName: protocolSlug, response: { (allCountries, bpcException) in
-            callBack(allCountries , bpcException)
+    let atomProtocolObj = AtomProtocol()
+    let atomPackageObj = AtomPackages()
+    
+    func getCountries(protocolSlug: String, callBack: @escaping ([AtomCountry]?, AtomException?) -> Void) {
+        
+        atomProtocolObj.protocol = protocolSlug
+        
+        HelperMethods().appDelegate.bpcManager?.getCountriesByProtocol(protocol: atomProtocolObj, response: { (allCountries, atomException) in
+            callBack(allCountries , atomException)
         })
     }
     
-    func getCountries(packageId: String, protocolSlug: String, callBack: @escaping ([AtomCountry]?, BPCException?) -> Void) {
+    func getCountries(packageId: String, protocolSlug: String, callBack: @escaping ([AtomCountry]?, AtomException?) -> Void) {
         
-        HelperMethods().appDelegate.bpcManager?.getCountriesByPackageAndProtocol(packageId: packageId, protocolName: protocolSlug, response: { (packageCountries, bpcException) in
-            callBack(packageCountries , bpcException)
+        atomProtocolObj.protocol = protocolSlug
+        atomPackageObj.packageId = packageId
+        
+        HelperMethods().appDelegate.bpcManager?.getCountriesByPackageAndProtocol(package: atomPackageObj, protocol: atomProtocolObj, response: { (packageCountries, atomException) in
+            callBack(packageCountries , atomException)
         })
     }
 }

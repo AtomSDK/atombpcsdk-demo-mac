@@ -12,9 +12,9 @@ import AtomBPC
 
 class PackagesService : PackagesServiceProtocol {
 
-    func getPackages(callBack: @escaping ([AtomPackages]?, BPCException?) -> Void) {
-        HelperMethods().appDelegate.bpcManager?.getPackages(response: { (allpackages, bpcException) in
-            callBack(allpackages , bpcException)
+    func getPackages(callBack: @escaping ([AtomPackages]?, AtomException?) -> Void) {
+        HelperMethods().appDelegate.bpcManager?.getPackages(response: { (allpackages, atomException) in
+            callBack(allpackages , atomException)
         })
     }
 }

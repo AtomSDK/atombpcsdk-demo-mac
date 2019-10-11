@@ -4,8 +4,8 @@
 target 'AtomBPC Demo OSX' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-	pod 'AtomBPC' , :podspec => '../../AtomBPC'
-	pod 'AtomSDKBySecure'
+	pod 'AtomBPC'
+	#pod 'AtomSDKBySecure'
   # Pods for AtomBPC Demo OSX
 
 end

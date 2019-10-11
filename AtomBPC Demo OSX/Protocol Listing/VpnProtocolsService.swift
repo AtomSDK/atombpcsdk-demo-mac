@@ -12,18 +12,19 @@ import AtomBPC
 
 class VpnProtocolsService : VpnProtocolsServiceProtocol {
     
-    func getProtocols(callBack: @escaping ([AtomProtocol]?, BPCException?) -> Void) {
+    func getProtocols(callBack: @escaping ([AtomProtocol]?, AtomException?) -> Void) {
         
-        HelperMethods().appDelegate.bpcManager?.getProtocols(response: { (allProtocols, bpcExceptions) in
-                callBack(allProtocols , bpcExceptions)
+        HelperMethods().appDelegate.bpcManager?.getProtocols(response: { (allProtocols, atomExceptions) in
+                callBack(allProtocols , atomExceptions)
         })
     }
     
     
-    func getProtocols(packageId: String, callBack: @escaping ([AtomProtocol]?, BPCException?) -> Void) {
-        
-        HelperMethods().appDelegate.bpcManager?.getProtocolsByPackage(packageId: packageId, response: { (allProtocols, bpcException) in
-            callBack(allProtocols , bpcException)
+    func getProtocols(packageId: String, callBack: @escaping ([AtomProtocol]?, AtomException?) -> Void) {
+        let packageObj = AtomPackages()
+        packageObj.packageId = packageId
+        HelperMethods().appDelegate.bpcManager?.getProtocolsByPackage(package: packageObj, response: { (allProtocols, atomException) in
+            callBack(allProtocols , atomException)
         })
     }
 }

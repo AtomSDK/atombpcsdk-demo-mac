@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FF9472906FEA08FE186DB67 /* Pods_AtomBPC_Demo_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D9CDEC4C3FC26855F9F6AEE /* Pods_AtomBPC_Demo_OSX.framework */; };
+		2A0E467568E47FEA0BC53E1C /* Pods_AtomBPC_Demo_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3BFE6A534B1E92DB730560 /* Pods_AtomBPC_Demo_OSX.framework */; };
 		7C0D78AC23325A2600DF7C52 /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D78AB23325A2600DF7C52 /* CountriesService.swift */; };
 		7C0D78AE23325A5000DF7C52 /* PackagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D78AD23325A5000DF7C52 /* PackagesService.swift */; };
 		7C0D78B023325B4200DF7C52 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D78AF23325B4200DF7C52 /* HelperMethods.swift */; };
@@ -59,9 +59,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D9CDEC4C3FC26855F9F6AEE /* Pods_AtomBPC_Demo_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtomBPC_Demo_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A87887EC6313E28B3F334B2 /* Pods-AtomBPC Demo OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomBPC Demo OSX.release.xcconfig"; path = "Target Support Files/Pods-AtomBPC Demo OSX/Pods-AtomBPC Demo OSX.release.xcconfig"; sourceTree = "<group>"; };
-		6FCD022908780A14DF61132F /* Pods-AtomBPC Demo OSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomBPC Demo OSX.debug.xcconfig"; path = "Target Support Files/Pods-AtomBPC Demo OSX/Pods-AtomBPC Demo OSX.debug.xcconfig"; sourceTree = "<group>"; };
+		1C3BFE6A534B1E92DB730560 /* Pods_AtomBPC_Demo_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtomBPC_Demo_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44C2EBDD22A9F4B21BC5DBFB /* Pods-AtomBPC Demo OSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomBPC Demo OSX.debug.xcconfig"; path = "Target Support Files/Pods-AtomBPC Demo OSX/Pods-AtomBPC Demo OSX.debug.xcconfig"; sourceTree = "<group>"; };
+		58CAB031E81C0D4D5B4CE13A /* Pods-AtomBPC Demo OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomBPC Demo OSX.release.xcconfig"; path = "Target Support Files/Pods-AtomBPC Demo OSX/Pods-AtomBPC Demo OSX.release.xcconfig"; sourceTree = "<group>"; };
 		7C0D78AB23325A2600DF7C52 /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
 		7C0D78AD23325A5000DF7C52 /* PackagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesService.swift; sourceTree = "<group>"; };
 		7C0D78AF23325B4200DF7C52 /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
@@ -121,8 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FF9472906FEA08FE186DB67 /* Pods_AtomBPC_Demo_OSX.framework in Frameworks */,
 				7C0DBBF12331035B003669F6 /* NetworkExtension.framework in Frameworks */,
+				2A0E467568E47FEA0BC53E1C /* Pods_AtomBPC_Demo_OSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,8 +132,8 @@
 		76275786BAB084CEBA223769 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6FCD022908780A14DF61132F /* Pods-AtomBPC Demo OSX.debug.xcconfig */,
-				4A87887EC6313E28B3F334B2 /* Pods-AtomBPC Demo OSX.release.xcconfig */,
+				44C2EBDD22A9F4B21BC5DBFB /* Pods-AtomBPC Demo OSX.debug.xcconfig */,
+				58CAB031E81C0D4D5B4CE13A /* Pods-AtomBPC Demo OSX.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				7C0DBBF02331035B003669F6 /* NetworkExtension.framework */,
-				2D9CDEC4C3FC26855F9F6AEE /* Pods_AtomBPC_Demo_OSX.framework */,
+				1C3BFE6A534B1E92DB730560 /* Pods_AtomBPC_Demo_OSX.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -333,11 +333,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C0DBB81232BE480003669F6 /* Build configuration list for PBXNativeTarget "AtomBPC Demo OSX" */;
 			buildPhases = (
-				6DCA4EC48B8FEA9A03725E9C /* [CP] Check Pods Manifest.lock */,
+				FE10DAD424FE2C4DF24F3E61 /* [CP] Check Pods Manifest.lock */,
 				7C0DBB6D232BE47D003669F6 /* Sources */,
 				7C0DBB6E232BE47D003669F6 /* Frameworks */,
 				7C0DBB6F232BE47D003669F6 /* Resources */,
-				36FED3DE5E22EAD8D3CD7DCB /* [CP] Embed Pods Frameworks */,
+				1D2C9D2BFBE778E8D5E37F59 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -407,7 +407,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		36FED3DE5E22EAD8D3CD7DCB /* [CP] Embed Pods Frameworks */ = {
+		1D2C9D2BFBE778E8D5E37F59 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -424,7 +424,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AtomBPC Demo OSX/Pods-AtomBPC Demo OSX-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6DCA4EC48B8FEA9A03725E9C /* [CP] Check Pods Manifest.lock */ = {
+		FE10DAD424FE2C4DF24F3E61 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -627,7 +627,7 @@
 		};
 		7C0DBB82232BE480003669F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FCD022908780A14DF61132F /* Pods-AtomBPC Demo OSX.debug.xcconfig */;
+			baseConfigurationReference = 44C2EBDD22A9F4B21BC5DBFB /* Pods-AtomBPC Demo OSX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AtomBPC Demo OSX/AtomBPC Demo OSX.entitlements";
@@ -648,7 +648,7 @@
 		};
 		7C0DBB83232BE480003669F6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A87887EC6313E28B3F334B2 /* Pods-AtomBPC Demo OSX.release.xcconfig */;
+			baseConfigurationReference = 58CAB031E81C0D4D5B4CE13A /* Pods-AtomBPC Demo OSX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AtomBPC Demo OSX/AtomBPC Demo OSX.entitlements";

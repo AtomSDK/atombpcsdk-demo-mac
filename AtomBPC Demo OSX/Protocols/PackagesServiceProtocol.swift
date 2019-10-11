@@ -12,5 +12,5 @@ import AtomCore
 
 protocol PackagesServiceProtocol {
     
-   func getPackages(callBack:@escaping ([AtomPackages]? ,BPCException?) -> Void)
+   func getPackages(callBack:@escaping ([AtomPackages]? ,AtomException?) -> Void)
 }

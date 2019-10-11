@@ -11,7 +11,7 @@ import AtomCore
 import AtomBPC
 
 protocol VpnProtocolsServiceProtocol {
-    func getProtocols(callBack:@escaping ([AtomProtocol]? ,BPCException?) -> Void)
-    func getProtocols(packageId : String  , callBack:@escaping ([AtomProtocol]? ,BPCException?) -> Void)
+    func getProtocols(callBack:@escaping ([AtomProtocol]? ,AtomException?) -> Void)
+    func getProtocols(packageId : String  , callBack:@escaping ([AtomProtocol]? ,AtomException?) -> Void)
     
 }

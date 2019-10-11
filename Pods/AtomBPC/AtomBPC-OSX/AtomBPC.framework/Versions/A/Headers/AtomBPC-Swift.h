@@ -202,13 +202,12 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 @class AtomConfiguration;
 @class AtomCountry;
-@class BPCException;
-@class AtomCity;
-@class AtomChannel;
-@class AtomPurposes;
+@class AtomException;
+@class AtomProtocol;
 @class AtomGroups;
 @class AtomPackages;
-@class AtomProtocol;
+@class AtomCity;
+@class AtomChannel;
 
 SWIFT_CLASS("_TtC7AtomBPC14AtomBPCManager")
 @interface AtomBPCManager : NSObject
@@ -219,179 +218,157 @@ SWIFT_CLASS("_TtC7AtomBPC14AtomBPCManager")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Gets available countries
-- (void)getCountriesWithResponse:(void (^ _Nonnull)(NSArray<AtomCountry *> * _Nullable, BPCException * _Nullable))response;
+- (void)getCountriesWithResponse:(void (^ _Nonnull)(NSArray<AtomCountry *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available countries based on protocol slug
-/// \param protocolName Slug of the country
+/// \param protocol AtomProtocol object
 ///
-- (void)getCountriesByProtocolWithProtocolName:(NSString * _Nonnull)protocolName response:(void (^ _Nonnull)(NSArray<AtomCountry *> * _Nullable, BPCException * _Nullable))response;
-/// Gets available country based on countryIsoCode
-/// \param countryIsoCode Slug of the country
+- (void)getCountriesByProtocolWithProtocol:(AtomProtocol * _Nonnull)protocol response:(void (^ _Nonnull)(NSArray<AtomCountry *> * _Nullable, AtomException * _Nullable))response;
+/// Gets available countries based on countryIsoCode
+/// \param country AtomCountry object
 ///
-- (void)getCountryWithCountryIsoCode:(NSString * _Nonnull)countryIsoCode response:(void (^ _Nonnull)(AtomCountry * _Nullable, BPCException * _Nullable))response;
+- (void)getCountryWithCountry:(AtomCountry * _Nonnull)country response:(void (^ _Nonnull)(AtomCountry * _Nullable, AtomException * _Nullable))response;
 /// Gets available countries based on groupId
-/// \param groupId Id of group
+/// \param group AtomGroups object
 ///
-- (void)getCountriesByGroupWithGroupId:(NSString * _Nonnull)groupId response:(void (^ _Nonnull)(NSArray<AtomCountry *> * _Nullable, BPCException * _Nullable))response;
+- (void)getCountriesByGroupWithGroup:(AtomGroups * _Nonnull)group response:(void (^ _Nonnull)(NSArray<AtomCountry *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available countries based on packageId
-/// \param packageId Id of package
+/// \param package AtomPackages object
 ///
-- (void)getCountriesByPackageWithPackageId:(NSString * _Nonnull)packageId response:(void (^ _Nonnull)(NSArray<AtomCountry *> * _Nullable, BPCException * _Nullable))response;
+- (void)getCountriesByPackageWithPackage:(AtomPackages * _Nonnull)package response:(void (^ _Nonnull)(NSArray<AtomCountry *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available countries based on packageId and Protocol slug
-/// \param packageId Id of package
+/// \param package AtomPackages object
 ///
-/// \param protocolName Slug of the protocol
+/// \param protocol AtomProtocol object
 ///
-- (void)getCountriesByPackageAndProtocolWithPackageId:(NSString * _Nonnull)packageId protocolName:(NSString * _Nonnull)protocolName response:(void (^ _Nonnull)(NSArray<AtomCountry *> * _Nullable, BPCException * _Nullable))response;
-/// Gets available countries based on purposeId
-/// \param purposeId Id of purpose
-///
-- (void)getPurposeCountriesWithPurposeId:(NSInteger)purposeId response:(void (^ _Nonnull)(NSArray<AtomCountry *> * _Nullable, BPCException * _Nullable))response;
+- (void)getCountriesByPackageAndProtocolWithPackage:(AtomPackages * _Nonnull)package protocol:(AtomProtocol * _Nonnull)protocol response:(void (^ _Nonnull)(NSArray<AtomCountry *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available countries based on packageId and groupId
-/// \param packageId Id of pakcage
+/// \param package AtomPackages object
 ///
-/// \param groupId Id of group
+/// \param group AtomGroups object
 ///
-- (void)getCountriesByPackageAndGroupWithPackageId:(NSString * _Nonnull)packageId groupId:(NSString * _Nonnull)groupId response:(void (^ _Nonnull)(NSArray<AtomCountry *> * _Nullable, BPCException * _Nullable))response;
+- (void)getCountriesByPackageAndGroupWithPackage:(AtomPackages * _Nonnull)package group:(AtomGroups * _Nonnull)group response:(void (^ _Nonnull)(NSArray<AtomCountry *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Cities
-- (void)getCitiesWithResponse:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, BPCException * _Nullable))response;
+- (void)getCitiesWithResponse:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Cities based on cityId
-/// \param cityId Id of city
+/// \param city AtomCity object
 ///
-- (void)getCityWithCityId:(NSInteger)cityId response:(void (^ _Nonnull)(AtomCity * _Nullable, BPCException * _Nullable))response;
+- (void)getCityWithCity:(AtomCity * _Nonnull)city response:(void (^ _Nonnull)(AtomCity * _Nullable, AtomException * _Nullable))response;
 /// Gets available Cities based on protocol slug
-/// \param protocolName Slug of the protocol
+/// \param protocol AtomProtocol object
 ///
-- (void)getCitiesByProtocolWithProtocolName:(NSString * _Nonnull)protocolName response:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, BPCException * _Nullable))response;
+- (void)getCitiesByProtocolWithProtocol:(AtomProtocol * _Nonnull)protocol response:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Cities based on country slug
-/// \param countryCode Slug of the country
+/// \param country AtomCountry object
 ///
-- (void)getCitiesByCountryWithCountryCode:(NSString * _Nonnull)countryCode response:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, BPCException * _Nullable))response;
+- (void)getCitiesByCountryWithCountry:(AtomCountry * _Nonnull)country response:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Cities based on group Id
-/// \param groupId Id of group
+/// \param group AtomGroups object
 ///
-- (void)getCitiesByGroupWithGroupId:(NSString * _Nonnull)groupId response:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, BPCException * _Nullable))response;
+- (void)getCitiesByGroupWithGroup:(AtomGroups * _Nonnull)group response:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Cities based on package Id
-/// \param packageId Id of package
+/// \param package AtomPackages object
 ///
-- (void)getCitiesByPackageWithPackageId:(NSString * _Nonnull)packageId response:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, BPCException * _Nullable))response;
+- (void)getCitiesByPackageWithPackage:(AtomPackages * _Nonnull)package response:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Cities based on package Id and protocol slug
-/// \param packageId Id of package
+/// \param protocol AtomProtocol object
 ///
-/// \param protocolName slug of protocol
+/// \param package AtomPackages object
 ///
-- (void)getCitiesByPackageAndProtocolWithProtocolName:(NSString * _Nonnull)protocolName packageId:(NSString * _Nonnull)packageId response:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, BPCException * _Nullable))response;
+- (void)getCitiesByPackageAndProtocolWithProtocol:(AtomProtocol * _Nonnull)protocol package:(AtomPackages * _Nonnull)package response:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Cities based on package Id and group Id
-/// \param packageId Id of package
+/// \param group AtomGroups object
 ///
-/// \param groupId Id of group
+/// \param package AtomPackages object
 ///
-- (void)getCitiesByPackageAndGroupWithGroupId:(NSString * _Nonnull)groupId packageId:(NSString * _Nonnull)packageId response:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, BPCException * _Nullable))response;
+- (void)getCitiesByPackageAndGroupWithGroup:(AtomGroups * _Nonnull)group package:(AtomPackages * _Nonnull)package response:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Channels
-- (void)getChannelsWithResponse:(void (^ _Nonnull)(NSArray<AtomChannel *> * _Nullable, BPCException * _Nullable))response;
+- (void)getChannelsWithResponse:(void (^ _Nonnull)(NSArray<AtomChannel *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Channels based on channel Id
-/// \param channelId Id of channel
+/// \param channel AtomChannel object
 ///
-- (void)getChannelWithChannelId:(NSInteger)channelId response:(void (^ _Nonnull)(AtomChannel * _Nullable, BPCException * _Nullable))response;
+- (void)getChannelWithChannel:(AtomChannel * _Nonnull)channel response:(void (^ _Nonnull)(AtomChannel * _Nullable, AtomException * _Nullable))response;
 /// Gets available Channels based on protocol slug
-/// \param protocolName slug of protocol
+/// \param protocol AtomProtocol object
 ///
-- (void)getChannelsByProtocolWithProtocolName:(NSString * _Nonnull)protocolName response:(void (^ _Nonnull)(NSArray<AtomChannel *> * _Nullable, BPCException * _Nullable))response;
+- (void)getChannelsByProtocolWithProtocol:(AtomProtocol * _Nonnull)protocol response:(void (^ _Nonnull)(NSArray<AtomChannel *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Channels based on package Id
-/// \param packageId Id of package
+/// \param package AtomPackages object
 ///
-- (void)getChannelsByPackageWithPackageId:(NSString * _Nonnull)packageId response:(void (^ _Nonnull)(NSArray<AtomChannel *> * _Nullable, BPCException * _Nullable))response;
+- (void)getChannelsByPackageWithPackage:(AtomPackages * _Nonnull)package response:(void (^ _Nonnull)(NSArray<AtomChannel *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Channels based on package Id and group Id
-/// \param packageId Id of package
+/// \param package AtomPackages object
 ///
-/// \param groupId Id of group
+/// \param group AtomGroups object
 ///
-- (void)getChannelsByPackageAndGroupWithPackageId:(NSString * _Nonnull)packageId groupId:(NSString * _Nonnull)groupId response:(void (^ _Nonnull)(NSArray<AtomChannel *> * _Nullable, BPCException * _Nullable))response;
+- (void)getChannelsByPackageAndGroupWithPackage:(AtomPackages * _Nonnull)package group:(AtomGroups * _Nonnull)group response:(void (^ _Nonnull)(NSArray<AtomChannel *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Channels based on  group Id
-/// \param groupId Id of group
+/// \param group AtomGroups object
 ///
-- (void)getChannelsByGroupWithGroupId:(NSString * _Nonnull)groupId response:(void (^ _Nonnull)(NSArray<AtomChannel *> * _Nullable, BPCException * _Nullable))response;
+- (void)getChannelsByGroupWithGroup:(AtomGroups * _Nonnull)group response:(void (^ _Nonnull)(NSArray<AtomChannel *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Channels based on  package Id and protocol slug
-/// \param packageId Id of package
+/// \param package AtomPackages object
 ///
-/// \param protocolName slug of protocol
+/// \param protocol AtomProtocol object
 ///
-- (void)getChannelsByPackageAndProtocolsWithPackageId:(NSString * _Nonnull)packageId protocolName:(NSString * _Nonnull)protocolName response:(void (^ _Nonnull)(NSArray<AtomChannel *> * _Nullable, BPCException * _Nullable))response;
-/// Gets available Purposes
-- (void)getPurposesWithResponse:(void (^ _Nonnull)(NSArray<AtomPurposes *> * _Nullable, BPCException * _Nullable))response;
-/// Gets available Purposes based on  purpose Id
-/// \param purposeId Id of purpose
-///
-- (void)getPurposeWithPurposeId:(NSInteger)purposeId response:(void (^ _Nonnull)(AtomPurposes * _Nullable, BPCException * _Nullable))response;
-/// Gets available Purposes based on  protocol slug
-/// \param protocolName slug of protocol
-///
-- (void)getPurposesByProtocolWithProtocolName:(NSString * _Nonnull)protocolName response:(void (^ _Nonnull)(NSArray<AtomPurposes *> * _Nullable, BPCException * _Nullable))response;
-/// Gets available Purposes based on  package Id
-/// \param packageId Id of package
-///
-- (void)getPurposesByPackageWithPackageId:(NSString * _Nonnull)packageId response:(void (^ _Nonnull)(NSArray<AtomPurposes *> * _Nullable, BPCException * _Nullable))response;
-/// Gets available Purposes based on  package Id and group Id
-/// \param packageId Id of package
-///
-/// \param packageId Id of group
-///
-- (void)getPurposesByPackageAndGroupWithPackageId:(NSString * _Nonnull)packageId groupId:(NSString * _Nonnull)groupId response:(void (^ _Nonnull)(NSArray<AtomPurposes *> * _Nullable, BPCException * _Nullable))response;
-/// Gets available Purposes based on  package Id and protocol slug
-/// \param packageId Id of package
-///
-/// \param protocolName slug of protocol
-///
-- (void)getPurposesByPackageAndProtocolWithPackageId:(NSString * _Nonnull)packageId protocolName:(NSString * _Nonnull)protocolName response:(void (^ _Nonnull)(NSArray<AtomPurposes *> * _Nullable, BPCException * _Nullable))response;
-/// Gets available Purposes based on group Id
-/// \param packageId Id of group
-///
-- (void)getPurposesByGroupWithGroupId:(NSString * _Nonnull)groupId response:(void (^ _Nonnull)(NSArray<AtomPurposes *> * _Nullable, BPCException * _Nullable))response;
+- (void)getChannelsByPackageAndProtocolsWithPackage:(AtomPackages * _Nonnull)package protocol:(AtomProtocol * _Nonnull)protocol response:(void (^ _Nonnull)(NSArray<AtomChannel *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Groups
-- (void)getGroupsWithResponse:(void (^ _Nonnull)(NSArray<AtomGroups *> * _Nullable, BPCException * _Nullable))response;
+- (void)getGroupsWithResponse:(void (^ _Nonnull)(NSArray<AtomGroups *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Group by group Id
-/// \param groupId Id of group
+/// \param group AtomGroups object
 ///
-- (void)getGroupWithGroupId:(NSString * _Nonnull)groupId response:(void (^ _Nonnull)(AtomGroups * _Nullable, BPCException * _Nullable))response;
+- (void)getGroupWithGroup:(AtomGroups * _Nonnull)group response:(void (^ _Nonnull)(AtomGroups * _Nullable, AtomException * _Nullable))response;
 /// Gets available Packages
-- (void)getPackagesWithResponse:(void (^ _Nonnull)(NSArray<AtomPackages *> * _Nullable, BPCException * _Nullable))response;
+- (void)getPackagesWithResponse:(void (^ _Nonnull)(NSArray<AtomPackages *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Packages by package Id
-/// \param packageId Id of package
+/// \param package AtomPackages object
 ///
-- (void)getPackageWithPackageId:(NSString * _Nonnull)packageId response:(void (^ _Nonnull)(AtomPackages * _Nullable, BPCException * _Nullable))response;
+- (void)getPackageWithPackage:(AtomPackages * _Nonnull)package response:(void (^ _Nonnull)(AtomPackages * _Nullable, AtomException * _Nullable))response;
 /// Gets available Packages by group Id
-/// \param groupId Id of group
+/// \param group AtomGroups object
 ///
-- (void)getPackageByGroupWithGroupId:(NSString * _Nonnull)groupId response:(void (^ _Nonnull)(NSArray<AtomPackages *> * _Nullable, BPCException * _Nullable))response;
+- (void)getPackageByGroupWithGroup:(AtomGroups * _Nonnull)group response:(void (^ _Nonnull)(NSArray<AtomPackages *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Protocols
-- (void)getProtocolsWithResponse:(void (^ _Nonnull)(NSArray<AtomProtocol *> * _Nullable, BPCException * _Nullable))response;
+- (void)getProtocolsWithResponse:(void (^ _Nonnull)(NSArray<AtomProtocol *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Protocol by protocol slug
-/// \param protocolName slug of protocol
+/// \param protocol AtomProtocol object
 ///
-- (void)getProtocolWithProtocolName:(NSString * _Nonnull)protocolName response:(void (^ _Nonnull)(AtomProtocol * _Nullable, BPCException * _Nullable))response;
+- (void)getProtocolWithProtocol:(AtomProtocol * _Nonnull)protocol response:(void (^ _Nonnull)(AtomProtocol * _Nullable, AtomException * _Nullable))response;
 /// Gets available Protocol by package Id
-/// \param packageId Id of package
+/// \param package AtomPackages object
 ///
-- (void)getProtocolsByPackageWithPackageId:(NSString * _Nonnull)packageId response:(void (^ _Nonnull)(NSArray<AtomProtocol *> * _Nullable, BPCException * _Nullable))response;
+- (void)getProtocolsByPackageWithPackage:(AtomPackages * _Nonnull)package response:(void (^ _Nonnull)(NSArray<AtomProtocol *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Protocol by group Id
-/// \param groupId Id of group
+/// \param group AtomGroups object
 ///
-- (void)getProtocolsByGroupWithGroupId:(NSString * _Nonnull)groupId response:(void (^ _Nonnull)(NSArray<AtomProtocol *> * _Nullable, BPCException * _Nullable))response;
+- (void)getProtocolsByGroupWithGroup:(AtomGroups * _Nonnull)group response:(void (^ _Nonnull)(NSArray<AtomProtocol *> * _Nullable, AtomException * _Nullable))response;
 /// Gets available Protocol by package Id and group Id
-/// \param packageId Id of package
+/// \param package AtomPackages object
 ///
-/// \param groupId Id of group
+/// \param group AtomGroups object
 ///
-- (void)getProtocolsByPackageAndGroupWithPackageId:(NSString * _Nonnull)packageId groupId:(NSString * _Nonnull)groupId response:(void (^ _Nonnull)(NSArray<AtomProtocol *> * _Nullable, BPCException * _Nullable))response;
+- (void)getProtocolsByPackageAndGroupWithPackage:(AtomPackages * _Nonnull)package group:(AtomGroups * _Nonnull)group response:(void (^ _Nonnull)(NSArray<AtomProtocol *> * _Nullable, AtomException * _Nullable))response;
 @end
 
 
-SWIFT_CLASS("_TtC7AtomBPC12BPCException")
-@interface BPCException : NSObject
-@property (nonatomic) NSError * _Nullable innerException;
-- (nonnull instancetype)initWithError:(NSError * _Nullable)error OBJC_DESIGNATED_INITIALIZER;
+SWIFT_CLASS("_TtC7AtomBPC13BaseException")
+@interface BaseException : NSObject
+@property (nonatomic) NSInteger errorCode;
+@property (nonatomic, copy) NSString * _Nullable errorMessage;
+@property (nonatomic, copy) NSString * _Nullable errorDomain;
+@property (nonatomic, strong) NSObject * _Nullable innerException;
+- (nonnull instancetype)initWithErrorCode:(NSInteger)errorCode errorDomain:(NSString * _Nonnull)errorDomain exception:(NSObject * _Nullable)exception OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithErrorCode:(NSInteger)errorCode errorMsg:(NSString * _Nonnull)errorMsg errorDomain:(NSString * _Nonnull)errorDomain exception:(NSObject * _Nullable)exception OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
+SWIFT_CLASS("_TtC7AtomBPC13AtomException")
+@interface AtomException : BaseException
+- (nonnull instancetype)initWithErrorCode:(NSInteger)errorCode errorDomain:(NSString * _Nonnull)errorDomain exception:(NSObject * _Nullable)exception OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithErrorCode:(NSInteger)errorCode errorMsg:(NSString * _Nonnull)errorMsg errorDomain:(NSString * _Nonnull)errorDomain exception:(NSObject * _Nullable)exception SWIFT_UNAVAILABLE;
+@end
+
 
 @class RLMRealm;
 @class RLMObjectSchema;

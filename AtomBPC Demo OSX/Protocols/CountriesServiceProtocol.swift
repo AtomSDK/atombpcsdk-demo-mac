@@ -11,6 +11,6 @@ import AtomCore
 import AtomBPC
 
 protocol CountriesServiceProtocol {
-    func getCountries(protocolSlug : String ,callBack:@escaping ([AtomCountry]? ,BPCException?) -> Void)
-    func getCountries(packageId : String  , protocolSlug : String , callBack:@escaping ([AtomCountry]? ,BPCException?) -> Void)
+    func getCountries(protocolSlug : String ,callBack:@escaping ([AtomCountry]? ,AtomException?) -> Void)
+    func getCountries(packageId : String  , protocolSlug : String , callBack:@escaping ([AtomCountry]? ,AtomException?) -> Void)
 }

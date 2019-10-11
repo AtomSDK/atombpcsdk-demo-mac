@@ -222,23 +222,81 @@ SWIFT_CLASS("_TtC8AtomCore15ApiBaseUrlModel")
 @class AtomProtocol;
 @class AtomCustomAttributeObjects;
 @class AtomChannelProtocolDns;
+@class NSCoder;
 
+/// Represents a Channel
+/// <h1>Property</h1>
+/// \code
+///    AtomChannel
+///
+/// \endcode
 SWIFT_CLASS("_TtC8AtomCore11AtomChannel")
-@interface AtomChannel : NSObject
+@interface AtomChannel : NSObject <NSCoding>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// Gets or sets the integer id of the channel. The valid Channel id is required for VPN Dialing.
+/// <h1>Property</h1>
+/// \code
+///    channelId
+///
+/// \endcode
 @property (nonatomic) NSInteger channelId;
+/// Gets or sets the name of the channel.
+/// <h1>Property</h1>
+/// \code
+///    name
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable name;
+/// Gets or sets the web url of the channel.
+/// <h1>Property</h1>
+/// \code
+///    channel_url
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable channel_url;
+/// Gets or sets the Icon Url of the channel.
+/// <h1>Property</h1>
+/// \code
+///    icon_url
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable icon_url;
+/// Property to identify the code of country
+/// <h1>Property</h1>
+/// \code
+///    country
+///
+/// \endcode
+@property (nonatomic, copy) NSString * _Nullable country;
+/// Gets the protocols supported by this channel.
+/// <h1>Property</h1>
+/// \code
+///    protocol
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomProtocol *> * _Nullable protocols;
+/// The custom_attributes. Property to identify attributes of channel
+/// <h1>Property</h1>
+/// \code
+///    custom_attributes
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomCustomAttributeObjects *> * _Nullable custom_attributes;
+/// The channelProtocolDns. Property to identify dns in protocols supported for the channel.
+/// <h1>Property</h1>
+/// \code
+///    channelProtocolDns
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomChannelProtocolDns *> * _Nullable channelProtocolDns;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class AtomDns;
 
 SWIFT_CLASS("_TtC8AtomCore22AtomChannelProtocolDns")
-@interface AtomChannelProtocolDns : NSObject
+@interface AtomChannelProtocolDns : NSObject <NSCoding>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, copy) NSString * _Nonnull id;
 @property (nonatomic) NSInteger channelId;
@@ -248,28 +306,86 @@ SWIFT_CLASS("_TtC8AtomCore22AtomChannelProtocolDns")
 @property (nonatomic) BOOL multiport_supported;
 @property (nonatomic) NSInteger port_number;
 @property (nonatomic) NSInteger api_endpoint;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class AtomDatacenters;
 @class AtomCityProtocolDns;
 
 SWIFT_CLASS("_TtC8AtomCore8AtomCity")
-@interface AtomCity : NSObject
+@interface AtomCity : NSObject <NSCoding>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// Gets or sets the integer id of the city. The valid city id is required for VPN Dialing.
+/// <h1>Property</h1>
+/// \code
+///    cityId
+///
+/// \endcode
 @property (nonatomic) NSInteger cityId;
+/// Gets or sets the name of the city.
+/// <h1>Pproperty</h1>
+/// \code
+///    name
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable name;
+/// Property to identify the code of country
+/// <h1>Property</h1>
+/// \code
+///    country
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable country;
+/// Gets or sets the country id of country with which city belongs. The valid country id is required for VPN Dialing.
+/// <h1>Property</h1>
+/// \code
+///    countryId
+///
+/// \endcode
 @property (nonatomic) NSInteger countryId;
+/// Gets or sets the least time a packet takes to be sent to the server of this country plus the length of time it takes for an acknowledgment of that packet to be received at the client depending on user’s network conditions. Default value for this property is 0 when calling cities
+/// <h1>Property</h1>
+/// \code
+///    latency
+///
+/// \endcode
 @property (nonatomic) NSInteger latency;
+/// Depending on the city. The values will be dependant upon the country provided for connection, representing the available data centers.
+/// <h1>Property</h1>
+/// \code
+///    dataCenters
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomDatacenters *> * _Nullable data_centers;
+/// Gets the protocols supported by this city.
+/// <h1>Property</h1>
+/// \code
+///    protocol
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomProtocol *> * _Nullable protocols;
+/// The custom_attributes. Property to identify attributes of city
+/// <h1>Property</h1>
+/// \code
+///    custom_attributes
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomCustomAttributeObjects *> * _Nullable custom_attributes;
+/// The cityProtocolDns. Property to identify dns in protocols supported for the city.
+/// <h1>Property</h1>
+/// \code
+///    cityProtocolDns
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomCityProtocolDns *> * _Nullable cityProtocolDns;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
 SWIFT_CLASS("_TtC8AtomCore19AtomCityProtocolDns")
-@interface AtomCityProtocolDns : NSObject
+@interface AtomCityProtocolDns : NSObject <NSCoding>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, copy) NSString * _Nonnull id;
 @property (nonatomic) NSInteger cityId;
@@ -279,42 +395,184 @@ SWIFT_CLASS("_TtC8AtomCore19AtomCityProtocolDns")
 @property (nonatomic) BOOL multiport_supported;
 @property (nonatomic) NSInteger port_number;
 @property (nonatomic) NSInteger api_endpoint;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
+/// Represents a set of properties which contains the configuration settings to initialize the sdk.
+/// <h1>Class</h1>
+/// \code
+///    AtomConfiguration
+///
+/// \endcode
 SWIFT_CLASS("_TtC8AtomCore17AtomConfiguration")
 @interface AtomConfiguration : NSObject
+/// <ul>
+///   <li>
+///     @property secretKey
+///   </li>
+///   <li>
+///     @discussion The Secret Key provided by ATOM at the time of subscription.
+///   </li>
+/// </ul>
 @property (nonatomic, copy) NSString * _Nullable secretKey;
+/// The base Url of all the requests to be made by the ATOM SDK. It is optional and can be managed through ATOM Console.
+/// <h1>Property</h1>
+/// \code
+///    baseUrl
+///
+/// \endcode
 @property (nonatomic, copy) NSURL * _Nullable baseUrl;
+/// Name of the VPN adapter to be displayed.
+/// <h1>Property</h1>
+/// \code
+///    vpnInterfaceName
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable vpnInterfaceName;
+/// Bundle identifier for tunnel Provider app extension.
+/// <h1>Property</h1>
+/// \code
+///    tunnelProviderBundleIdentifier
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable tunnelProviderBundleIdentifier;
+/// The name of the app group in which the tunnel extension lives in.
+/// <h1>Property</h1>
+/// \code
+///    appGroupIdentifier
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable appGroupIdentifier;
+/// The persistVPNDetails used to store last  AtomProperties and AtomConnectionDetails.
+/// <h1>Property</h1>
+/// \code
+///    persistVPNDetails
+///
+/// \endcode
+@property (nonatomic) BOOL persistVPNDetails;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, AtomCoreNetworkError, closed) {
+  AtomCoreNetworkErrorCoreParsingFailed = 4001,
+  AtomCoreNetworkErrorCoreUrlNotFound = 4002,
+  AtomCoreNetworkErrorCoreWebClientException = 4003,
+  AtomCoreNetworkErrorCoreRequestFailed = 4006,
+  AtomCoreNetworkErrorCoreRequestParameterEncodingFailed = 4007,
+  AtomCoreNetworkErrorPingFailed = 7309,
+};
 
 @class AtomCountryProtocolDns;
 
+/// Property to identify the code of country
+/// <h1>Class</h1>
+/// \code
+///    AtomCountry
+///
+/// \endcode
 SWIFT_CLASS("_TtC8AtomCore11AtomCountry")
-@interface AtomCountry : NSObject
+@interface AtomCountry : NSObject <NSCoding>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// Property to identify the code of country
+/// <h1>Property</h1>
+/// \code
+///    country
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable country;
+/// Property to identify the name of the country
+/// <h1>Property</h1>
+/// \code
+///    name
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable name;
+/// Property to identify cities in that country
+/// <h1>Property</h1>
+/// \code
+///    cities.
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomCity *> * _Nullable cities;
+/// Gets or sets the latitude of the country
+/// <h1>Property</h1>
+/// \code
+///    latitude
+///
+/// \endcode
 @property (nonatomic) double latitude;
+/// Gets or sets the logitude of the country
+/// <h1>Property</h1>
+/// \code
+///    longitude
+///
+/// \endcode
 @property (nonatomic) double longitude;
+/// Gets or sets the least time a packet takes to be sent to the server of this country plus the length of time it takes for an acknowledgment of that packet to be received at the client depending on user’s network conditions. Default value for this property is 0 when calling Countries
+/// <h1>Property</h1>
+/// \code
+///    latency
+///
+/// \endcode
 @property (nonatomic) NSInteger latency;
+/// Gets or sets the ISO Alpha-2 Country code of the current country.
+/// <h1>Property</h1>
+/// \code
+///    iso_code
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable iso_code;
+/// The isSmartDialingSupported. Property to identify which country is Smart Country.
+/// <h1>Property</h1>
+/// \code
+///    isSmartDialingSupported
+///
+/// \endcode
 @property (nonatomic) BOOL isSmartDialingSupported;
+/// The acknowledgment_server. Property to identify acknowledgment server
+/// <h1>Property</h1>
+/// \code
+///    acknowledgment_server
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable acknowledgement_server;
+/// Depending on the country. The values will be dependant upon the country provided for connection, representing the available data centers.
+/// <h1>Property</h1>
+/// \code
+///    dataCenters
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomDatacenters *> * _Nullable dataCenters;
+/// Gets the protocols supported by this country.
+/// <h1>Property</h1>
+/// \code
+///    protocol
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomProtocol *> * _Nullable protocols;
+/// The custom_attributes. Property to identify attributes of country
+/// <h1>Property</h1>
+/// \code
+///    custom_attributes
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomCustomAttributeObjects *> * _Nullable custom_attributes;
+/// The countryProtocolDns. Property to identify dns in protocols supported for the country.
+/// <h1>Property</h1>
+/// \code
+///    countryProtocolDns
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomCountryProtocolDns *> * _Nullable countryProtocolDns;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
 SWIFT_CLASS("_TtC8AtomCore22AtomCountryProtocolDns")
-@interface AtomCountryProtocolDns : NSObject
+@interface AtomCountryProtocolDns : NSObject <NSCoding>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, copy) NSString * _Nullable id;
 @property (nonatomic, copy) NSString * _Nullable country;
@@ -324,21 +582,25 @@ SWIFT_CLASS("_TtC8AtomCore22AtomCountryProtocolDns")
 @property (nonatomic) BOOL multiport_supported;
 @property (nonatomic) NSInteger port_number;
 @property (nonatomic) NSInteger api_endpoint;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class AtomMasterCustomAttributes;
 
 SWIFT_CLASS("_TtC8AtomCore26AtomCustomAttributeObjects")
-@interface AtomCustomAttributeObjects : NSObject
+@interface AtomCustomAttributeObjects : NSObject <NSCoding>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, copy) NSString * _Nullable customAttributeId;
 @property (nonatomic, strong) AtomMasterCustomAttributes * _Nonnull masterCustomAttribute;
 @property (nonatomic, copy) NSString * _Nullable value;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
 SWIFT_CLASS("_TtC8AtomCore15AtomDatacenters")
-@interface AtomDatacenters : NSObject
+@interface AtomDatacenters : NSObject <NSCoding>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic) NSInteger dataCenterId;
 @property (nonatomic, copy) NSString * _Nullable name;
@@ -346,6 +608,8 @@ SWIFT_CLASS("_TtC8AtomCore15AtomDatacenters")
 @property (nonatomic, copy) NSString * _Nullable hostname;
 @property (nonatomic) NSInteger latency;
 @property (nonatomic, copy) NSArray<AtomCustomAttributeObjects *> * _Nullable custom_attributes;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -359,11 +623,18 @@ SWIFT_CLASS("_TtC8AtomCore18AtomDefaultAccount")
 
 
 SWIFT_CLASS("_TtC8AtomCore7AtomDns")
-@interface AtomDns : NSObject
+@interface AtomDns : NSObject <NSCoding>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, copy) NSString * _Nullable hostname;
 @property (nonatomic, copy) NSString * _Nullable type;
 @property (nonatomic) NSInteger dnsid;
+@property (nonatomic, copy) NSString * _Nullable acknowledgementServer;
+@property (nonatomic, copy) NSString * _Nullable multiportRange;
+@property (nonatomic, copy) NSString * _Nullable configurationVersion;
+@property (nonatomic) NSInteger portNumber;
+@property (nonatomic) BOOL isMultiport;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class AtomPackages;
@@ -386,11 +657,13 @@ SWIFT_CLASS("_TtC8AtomCore10AtomGroups")
 
 
 SWIFT_CLASS("_TtC8AtomCore26AtomMasterCustomAttributes")
-@interface AtomMasterCustomAttributes : NSObject
+@interface AtomMasterCustomAttributes : NSObject <NSCoding>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, copy) NSString * _Nullable id;
 @property (nonatomic, copy) NSString * _Nullable attribute;
 @property (nonatomic, copy) NSString * _Nullable datatype;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class AtomOvpnConfigurationProtocol;
@@ -412,7 +685,6 @@ SWIFT_CLASS("_TtC8AtomCore29AtomOvpnConfigurationProtocol")
 @property (nonatomic, strong) AtomProtocol * _Nonnull protocols;
 @end
 
-@class AtomSmartConnect;
 
 SWIFT_CLASS("_TtC8AtomCore12AtomPackages")
 @interface AtomPackages : NSObject
@@ -429,23 +701,78 @@ SWIFT_CLASS("_TtC8AtomCore12AtomPackages")
 @property (nonatomic, copy) NSArray<AtomCountry *> * _Nullable countries;
 @property (nonatomic, copy) NSArray<AtomPurposes *> * _Nullable purposes;
 @property (nonatomic, copy) NSArray<AtomCity *> * _Nullable cities;
-@property (nonatomic, copy) NSArray<AtomSmartConnect *> * _Nullable smartConnects;
 @property (nonatomic, copy) NSArray<AtomCustomAttributeObjects *> * _Nullable custom_attributes;
 @end
 
 
 SWIFT_CLASS("_TtC8AtomCore12AtomProtocol")
-@interface AtomProtocol : NSObject
+@interface AtomProtocol : NSObject <NSCoding>
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// Gets or sets the name the protocol.
+/// <h1>Property</h1>
+/// \code
+///    name
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable name;
+/// Get or sets the protocol
+/// <h1>Property</h1>
+/// \code
+///    protocol
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable protocol;
+/// Get or sets the port_number
+/// <h1>Property</h1>
+/// \code
+///    port_number
+///
+/// \endcode
 @property (nonatomic) NSInteger port_number;
+/// Get or sets the multiport_range
+/// <h1>Property</h1>
+/// \code
+///    multiport_range
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable multiport_range;
+/// Get or sets the configuration
+/// <h1>Property</h1>
+/// \code
+///    configuration
+///
+/// \endcode
 @property (nonatomic, copy) NSString * _Nullable configuration;
+/// Get or sets the multiport_supported
+/// <h1>Property</h1>
+/// \code
+///    multiport_supported
+///
+/// \endcode
 @property (nonatomic) BOOL multiport_supported;
+/// The dns. Depending on the protocol.
+/// <h1>Property</h1>
+/// \code
+///    dns
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomDns *> * _Nullable dns;
+/// The protocolSwitch. Depending on the protocol.
+/// <h1>Property</h1>
+/// \code
+///    protocolSwitch
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomProtocol *> * _Nullable protocolSwitch;
+/// The custom_attributes. Property to identify attributes of city
+/// <h1>Property</h1>
+/// \code
+///    custom_attributes
+///
+/// \endcode
 @property (nonatomic, copy) NSArray<AtomCustomAttributeObjects *> * _Nullable custom_attributes;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -479,7 +806,15 @@ SWIFT_CLASS("_TtC8AtomCore12AtomReseller")
 @interface AtomReseller : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic) NSInteger resellerId;
+@property (nonatomic, copy) NSString * _Nullable resellerUId;
 @end
+
+typedef SWIFT_ENUM(NSInteger, AtomSDKError, closed) {
+  AtomSDKErrorSecretKeyRequired = 5001,
+  AtomSDKErrorAccessTokenRequestFailed = 5002,
+  AtomSDKErrorAccessTokenGeneralError = 5003,
+  AtomSDKErrorAccessTokenJsonNotSerialized = 5005,
+};
 
 @class AtomSmartConnectProtocolDns;
 
@@ -491,6 +826,13 @@ SWIFT_CLASS("_TtC8AtomCore16AtomSmartConnect")
 @property (nonatomic, copy) NSString * _Nullable title;
 @property (nonatomic, copy) NSArray<AtomProtocol *> * _Nullable protocols;
 @property (nonatomic, copy) NSArray<AtomSmartConnectProtocolDns *> * _Nullable smartConnectProtocolDns;
+@property (nonatomic, copy) NSString * _Nullable host;
+@property (nonatomic, copy) NSString * _Nullable configurationVersion;
+@property (nonatomic, copy) NSString * _Nullable dnsType;
+@property (nonatomic, copy) NSString * _Nullable protocol;
+@property (nonatomic) NSInteger protocolNumber;
+@property (nonatomic) BOOL isMultiport;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable tags;
 @end
 
 
@@ -506,6 +848,19 @@ SWIFT_CLASS("_TtC8AtomCore27AtomSmartConnectProtocolDns")
 @property (nonatomic) BOOL multiport_supported;
 @property (nonatomic) NSInteger port_number;
 @end
+
+typedef SWIFT_ENUM(NSInteger, AtomSmartConnectTag, closed) {
+  AtomSmartConnectTagAutomatic = 0,
+  AtomSmartConnectTagFileSharing = 1,
+  AtomSmartConnectTagFreeFileSharing = 2,
+  AtomSmartConnectTagAutomaticFileSharing = 3,
+  AtomSmartConnectTagFreeUsers = 4,
+  AtomSmartConnectTagNatted = 5,
+  AtomSmartConnectTagNattedFileSharing = 6,
+  AtomSmartConnectTagPaid = 7,
+  AtomSmartConnectTagAvfFileSharing = 8,
+  AtomSmartConnectTagAvfSecurity = 9,
+};
 
 
 SWIFT_CLASS("_TtC8AtomCore13BaseException")
@@ -535,6 +890,26 @@ SWIFT_PROTOCOL("_TtP8AtomCore12PingProtocol_")
 - (void)getOptimizedCitiesWithResponse:(void (^ _Nonnull)(NSArray<AtomCity *> * _Nullable, NSError * _Nullable))response;
 @end
 
+@class NSDictionary;
+
+@interface NSError (SWIFT_EXTENSION(AtomCore))
++ (NSError * _Nullable)errorWithResponseParams:(NSDictionary * _Nonnull)responseParams domain:(NSString * _Nonnull)domain SWIFT_WARN_UNUSED_RESULT;
++ (NSError * _Nullable)errorWithCode:(NSInteger)code message:(NSString * _Nonnull)message domain:(NSString * _Nonnull)domain SWIFT_WARN_UNUSED_RESULT;
++ (NSError * _Nullable)errorWithCode:(NSInteger)code errorMessage:(NSString * _Nonnull)errorMessage andFailureMessage:(NSString * _Nonnull)andFailureMessage domain:(NSString * _Nonnull)domain SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@class NSNumber;
+
+SWIFT_CLASS("_TtC8AtomCore21SmartConnectTagHelper")
+@interface SmartConnectTagHelper : NSObject
++ (NSString * _Nonnull)getStringFrom:(enum AtomSmartConnectTag)from SWIFT_WARN_UNUSED_RESULT;
++ (enum AtomSmartConnectTag)getTagFromString:(NSString * _Nonnull)from SWIFT_WARN_UNUSED_RESULT;
++ (enum AtomSmartConnectTag)getTagFromInt:(NSInteger)from SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nonnull)getTagValueFromInt:(NSNumber * _Nonnull)from SWIFT_WARN_UNUSED_RESULT;
++ (NSArray<NSNumber *> * _Nonnull)getAvailableTags SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

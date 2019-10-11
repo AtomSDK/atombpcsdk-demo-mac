@@ -1,10 +1,10 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper" "${PODS_CONFIGURATION_BUILD_DIR}/Realm" "${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift" "${PODS_CONFIGURATION_BUILD_DIR}/Swinject" "${PODS_CONFIGURATION_BUILD_DIR}/SwinjectAutoregistration" "${PODS_ROOT}/AtomBPC/AtomBPC-OSX" "${PODS_ROOT}/AtomCore/AtomCore-OSX" "${PODS_ROOT}/AtomSDKBySecure/AtomSDK/AtomSDK-OSX" "$(PODS_ROOT)/AtomCore/AtomCore-OSX/"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper" "${PODS_CONFIGURATION_BUILD_DIR}/Realm" "${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift" "${PODS_CONFIGURATION_BUILD_DIR}/Swinject" "${PODS_CONFIGURATION_BUILD_DIR}/SwinjectAutoregistration" "${PODS_ROOT}/AtomBPC/AtomBPC-OSX" "${PODS_ROOT}/AtomCore/AtomCore-OSX"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper/ObjectMapper.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Realm/Realm.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift/RealmSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Swinject/Swinject.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwinjectAutoregistration/SwinjectAutoregistration.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/../Frameworks' '@loader_path/Frameworks'
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Realm/core"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"z" -framework "AtomBPC" -framework "AtomCore" -framework "AtomSDK" -framework "ObjectMapper" -framework "Realm" -framework "RealmSwift" -framework "Security" -framework "Swinject" -framework "SwinjectAutoregistration"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"z" -framework "AtomBPC" -framework "AtomCore" -framework "ObjectMapper" -framework "Realm" -framework "RealmSwift" -framework "Security" -framework "Swinject" -framework "SwinjectAutoregistration"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
