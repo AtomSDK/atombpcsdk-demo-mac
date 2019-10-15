@@ -14,7 +14,7 @@ BPC SDK provides the customisable inventory which enables you to offer different
 
 -   OSX 10.10+
 -   Xcode 11+
--   ATOM SDK 2.3+
+-   ATOM SDK 2.4+
 
 ## SDK Installation
 
