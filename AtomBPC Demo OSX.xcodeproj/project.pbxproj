@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A0E467568E47FEA0BC53E1C /* Pods_AtomBPC_Demo_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3BFE6A534B1E92DB730560 /* Pods_AtomBPC_Demo_OSX.framework */; };
-		7C0D78AC23325A2600DF7C52 /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D78AB23325A2600DF7C52 /* CountriesService.swift */; };
-		7C0D78AE23325A5000DF7C52 /* PackagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D78AD23325A5000DF7C52 /* PackagesService.swift */; };
 		7C0D78B023325B4200DF7C52 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D78AF23325B4200DF7C52 /* HelperMethods.swift */; };
 		7C0DBB75232BE47D003669F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0DBB74232BE47D003669F6 /* AppDelegate.swift */; };
 		7C0DBB77232BE47D003669F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0DBB76232BE47D003669F6 /* MainViewController.swift */; };
@@ -49,21 +46,12 @@
 		7C0DBBE22330B7B4003669F6 /* ConfigurePackagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0DBBDD2330B7B4003669F6 /* ConfigurePackagesCell.swift */; };
 		7C0DBBE32330B7B4003669F6 /* PackagesListing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DBBDE2330B7B4003669F6 /* PackagesListing.storyboard */; };
 		7C0DBBF12331035B003669F6 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C0DBBF02331035B003669F6 /* NetworkExtension.framework */; };
-		7C0DBBF82332543E003669F6 /* VpnProtocolsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0DBBF72332543E003669F6 /* VpnProtocolsServiceProtocol.swift */; };
-		7C0DBBFA23325450003669F6 /* PackagesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0DBBF923325450003669F6 /* PackagesServiceProtocol.swift */; };
-		7C0DBBFC23325463003669F6 /* CountriesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0DBBFB23325463003669F6 /* CountriesServiceProtocol.swift */; };
-		7C0DBBFE233255AE003669F6 /* VpnProtocolsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0DBBFD233255AE003669F6 /* VpnProtocolsService.swift */; };
 		7C888EEF2334A64400ED2E01 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C888EEE2334A64400ED2E01 /* MainViewModel.swift */; };
 		7C888EF22334AA8800ED2E01 /* Credntials.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C888EF12334AA8800ED2E01 /* Credntials.storyboard */; };
 		7C888EF42334ABD800ED2E01 /* CredentialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C888EF32334ABD800ED2E01 /* CredentialsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1C3BFE6A534B1E92DB730560 /* Pods_AtomBPC_Demo_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtomBPC_Demo_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		44C2EBDD22A9F4B21BC5DBFB /* Pods-AtomBPC Demo OSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomBPC Demo OSX.debug.xcconfig"; path = "Target Support Files/Pods-AtomBPC Demo OSX/Pods-AtomBPC Demo OSX.debug.xcconfig"; sourceTree = "<group>"; };
-		58CAB031E81C0D4D5B4CE13A /* Pods-AtomBPC Demo OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtomBPC Demo OSX.release.xcconfig"; path = "Target Support Files/Pods-AtomBPC Demo OSX/Pods-AtomBPC Demo OSX.release.xcconfig"; sourceTree = "<group>"; };
-		7C0D78AB23325A2600DF7C52 /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
-		7C0D78AD23325A5000DF7C52 /* PackagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesService.swift; sourceTree = "<group>"; };
 		7C0D78AF23325B4200DF7C52 /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		7C0DBB71232BE47D003669F6 /* AtomBPC Demo OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AtomBPC Demo OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0DBB74232BE47D003669F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,10 +95,6 @@
 		7C0DBBDD2330B7B4003669F6 /* ConfigurePackagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurePackagesCell.swift; sourceTree = "<group>"; };
 		7C0DBBDE2330B7B4003669F6 /* PackagesListing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PackagesListing.storyboard; sourceTree = "<group>"; };
 		7C0DBBF02331035B003669F6 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
-		7C0DBBF72332543E003669F6 /* VpnProtocolsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VpnProtocolsServiceProtocol.swift; sourceTree = "<group>"; };
-		7C0DBBF923325450003669F6 /* PackagesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesServiceProtocol.swift; sourceTree = "<group>"; };
-		7C0DBBFB23325463003669F6 /* CountriesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesServiceProtocol.swift; sourceTree = "<group>"; };
-		7C0DBBFD233255AE003669F6 /* VpnProtocolsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VpnProtocolsService.swift; sourceTree = "<group>"; };
 		7C888EEE2334A64400ED2E01 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		7C888EF12334AA8800ED2E01 /* Credntials.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Credntials.storyboard; sourceTree = "<group>"; };
 		7C888EF32334ABD800ED2E01 /* CredentialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +106,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C0DBBF12331035B003669F6 /* NetworkExtension.framework in Frameworks */,
-				2A0E467568E47FEA0BC53E1C /* Pods_AtomBPC_Demo_OSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,8 +115,6 @@
 		76275786BAB084CEBA223769 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				44C2EBDD22A9F4B21BC5DBFB /* Pods-AtomBPC Demo OSX.debug.xcconfig */,
-				58CAB031E81C0D4D5B4CE13A /* Pods-AtomBPC Demo OSX.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -160,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				7C0DBBA7232F6406003669F6 /* AppDelegate */,
-				7C0DBBF623325408003669F6 /* Protocols */,
 				7C0DBBC7232FBB1B003669F6 /* VPN */,
 				7C0DBBAD232F66A8003669F6 /* Helper */,
 				7C0DBBA8232F65E9003669F6 /* BaseClasses */,
@@ -257,7 +237,6 @@
 				7C0DBBC1232FB9B6003669F6 /* Countries.storyboard */,
 				7C0DBBBD232FB9AA003669F6 /* CountriesViewController.swift */,
 				7C0DBBBF232FB9B0003669F6 /* CountriesViewModel.swift */,
-				7C0D78AB23325A2600DF7C52 /* CountriesService.swift */,
 				7C0DBBC3232FB9C1003669F6 /* CountriesTableViewDataSource.swift */,
 				7C0DBBC4232FB9C1003669F6 /* ConfigureCountriesCell.swift */,
 			);
@@ -280,7 +259,6 @@
 				7C0DBBD1232FD261003669F6 /* ProtocolsListingViewModel.swift */,
 				7C0DBBCE232FD261003669F6 /* ProtocolsTableViewDataSource.swift */,
 				7C0DBBCF232FD261003669F6 /* ConfigureProtocolsCell.swift */,
-				7C0DBBFD233255AE003669F6 /* VpnProtocolsService.swift */,
 			);
 			path = "Protocol Listing";
 			sourceTree = "<group>";
@@ -291,21 +269,10 @@
 				7C0DBBDE2330B7B4003669F6 /* PackagesListing.storyboard */,
 				7C0DBBDA2330B7B4003669F6 /* PackagesListingViewController.swift */,
 				7C0DBBDC2330B7B4003669F6 /* PackagesListingViewModel.swift */,
-				7C0D78AD23325A5000DF7C52 /* PackagesService.swift */,
 				7C0DBBDB2330B7B4003669F6 /* PackagesTableViewDataSource.swift */,
 				7C0DBBDD2330B7B4003669F6 /* ConfigurePackagesCell.swift */,
 			);
 			path = "Package Listing";
-			sourceTree = "<group>";
-		};
-		7C0DBBF623325408003669F6 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				7C0DBBF72332543E003669F6 /* VpnProtocolsServiceProtocol.swift */,
-				7C0DBBF923325450003669F6 /* PackagesServiceProtocol.swift */,
-				7C0DBBFB23325463003669F6 /* CountriesServiceProtocol.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		7C888EF02334AA5000ED2E01 /* Credentials */ = {
@@ -321,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				7C0DBBF02331035B003669F6 /* NetworkExtension.framework */,
-				1C3BFE6A534B1E92DB730560 /* Pods_AtomBPC_Demo_OSX.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -333,11 +299,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C0DBB81232BE480003669F6 /* Build configuration list for PBXNativeTarget "AtomBPC Demo OSX" */;
 			buildPhases = (
-				FE10DAD424FE2C4DF24F3E61 /* [CP] Check Pods Manifest.lock */,
 				7C0DBB6D232BE47D003669F6 /* Sources */,
 				7C0DBB6E232BE47D003669F6 /* Frameworks */,
 				7C0DBB6F232BE47D003669F6 /* Resources */,
-				1D2C9D2BFBE778E8D5E37F59 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -406,48 +370,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1D2C9D2BFBE778E8D5E37F59 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AtomBPC Demo OSX/Pods-AtomBPC Demo OSX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AtomBPC Demo OSX/Pods-AtomBPC Demo OSX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AtomBPC Demo OSX/Pods-AtomBPC Demo OSX-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FE10DAD424FE2C4DF24F3E61 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AtomBPC Demo OSX-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		7C0DBB6D232BE47D003669F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -462,11 +384,7 @@
 				7C0DBBBE232FB9AA003669F6 /* CountriesViewController.swift in Sources */,
 				7C0DBBBB232FB489003669F6 /* DashboardViewModel.swift in Sources */,
 				7C0DBBB1232F6757003669F6 /* DynamicBinding.swift in Sources */,
-				7C0DBBF82332543E003669F6 /* VpnProtocolsServiceProtocol.swift in Sources */,
-				7C0D78AE23325A5000DF7C52 /* PackagesService.swift in Sources */,
 				7C0DBBC5232FB9C1003669F6 /* CountriesTableViewDataSource.swift in Sources */,
-				7C0D78AC23325A2600DF7C52 /* CountriesService.swift in Sources */,
-				7C0DBBFC23325463003669F6 /* CountriesServiceProtocol.swift in Sources */,
 				7C0DBBD7232FD262003669F6 /* ProtocolsListingViewController.swift in Sources */,
 				7C888EF42334ABD800ED2E01 /* CredentialsViewController.swift in Sources */,
 				7C0DBBB4232FA82F003669F6 /* AtomValidation.swift in Sources */,
@@ -489,9 +407,7 @@
 				7C0DBBAF232F66B6003669F6 /* Constants.swift in Sources */,
 				7C0DBB75232BE47D003669F6 /* AppDelegate.swift in Sources */,
 				7C0DBBA0232F635F003669F6 /* TransitionFromViewSegue.swift in Sources */,
-				7C0DBBFA23325450003669F6 /* PackagesServiceProtocol.swift in Sources */,
 				7C0DBBE12330B7B4003669F6 /* PackagesListingViewModel.swift in Sources */,
-				7C0DBBFE233255AE003669F6 /* VpnProtocolsService.swift in Sources */,
 				7C0DBBB9232FB480003669F6 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +484,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -622,12 +539,12 @@
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		7C0DBB82232BE480003669F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44C2EBDD22A9F4B21BC5DBFB /* Pods-AtomBPC Demo OSX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AtomBPC Demo OSX/AtomBPC Demo OSX.entitlements";
@@ -648,7 +565,6 @@
 		};
 		7C0DBB83232BE480003669F6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58CAB031E81C0D4D5B4CE13A /* Pods-AtomBPC Demo OSX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AtomBPC Demo OSX/AtomBPC Demo OSX.entitlements";

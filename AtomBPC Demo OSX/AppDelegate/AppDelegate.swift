@@ -27,7 +27,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func registerDependencies(){
         viewModelDependencies()
         uiDependencies()
-        serviceDependencies()
     }
     
     func uiDependencies()  {
@@ -44,10 +43,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         dependencyContainer.autoregister(MainViewModel.self, initializer: MainViewModel.init)
         dependencyContainer.autoregister(DashboardViewModel.self, initializer: DashboardViewModel.init)
     }
-    func serviceDependencies(){
-        dependencyContainer.autoregister(PackagesService.self, initializer: PackagesService.init)
-        dependencyContainer.autoregister(VpnProtocolsService.self, initializer: VpnProtocolsService.init)
-        dependencyContainer.autoregister(CountriesService.self, initializer: CountriesService.init)
-    }
+
 }
 

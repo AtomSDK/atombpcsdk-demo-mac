@@ -1,4 +1,0 @@
-framework module AtomCore {
-  header "AtomCore-Swift.h"
-  requires objc
-}

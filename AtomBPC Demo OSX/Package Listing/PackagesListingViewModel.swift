@@ -9,7 +9,6 @@
 import Foundation
 import AtomCore
 
-
 class PackagesListingViewModel : BaseViewModel {
     
     var packagesModel = [AtomPackages]()
@@ -17,22 +16,16 @@ class PackagesListingViewModel : BaseViewModel {
     var isAnimating = Dynamic(false)
     var isTblViewReload = Dynamic(false)
     
-    private var packagesService : PackagesService!
-    
     override init() {
         super.init()
-        self.resolveDependencies()
-    }
-    
-    private func resolveDependencies(){
-        self.packagesService = referenceContainer.resolve(PackagesService.self)
     }
     
     func getPackages()  {
         DispatchQueue.main.async{
             self.isAnimating.value = true
-            self.packagesService?.getPackages(callBack: { (packagesModel, bpcexception) in
-                if let model = packagesModel {
+            
+            HelperMethods().appDelegate.bpcManager?.getPackages(response: { (packagesModel, atomException) in
+              if let model = packagesModel {
                     self.packagesModel = model
                     self.packagesModel = self.packagesModel.sorted(by: { (Obj1, Obj2) -> Bool in
                         let Obj1_Name = Obj1.name ?? ""

@@ -16,39 +16,14 @@ class ProtocolsListingViewModel : BaseViewModel {
     var selectedProtocolModel :AtomProtocol? = nil
     var isAnimating = Dynamic(false)
     var isTblViewReload = Dynamic(false)
-    private var vpnProtocolService : VpnProtocolsService!
     
     override init() {
         super.init()
-        self.resolveDependencies()
-    }
-    private func resolveDependencies(){
-        self.vpnProtocolService = referenceContainer.resolve(VpnProtocolsService.self)
     }
     
     func getProtocols() {
-        DispatchQueue.main.async{
-        self.vpnProtocolService.getProtocols { (defaultProtocols, bpcException) in
-            if let model = defaultProtocols {
-                self.protocolModel = model
-                self.protocolModel = self.protocolModel.sorted(by: { (Obj1, Obj2) -> Bool in
-                    let Obj1_Name = Obj1.protocol ?? ""
-                    let Obj2_Name = Obj2.protocol ?? ""
-                    return (Obj1_Name.localizedCaseInsensitiveCompare(Obj2_Name) == .orderedAscending)
-                })
-                self.tempProtocolModel = self.protocolModel
-                self.isAnimating.value = false
-                self.isTblViewReload.value = true
-                BaseViewModel.selectedProtocolSlug.value = self.protocolModel.first?.protocol ?? "IPSEC"
-            }
-            }
-        }
-    }
-    
-    func getProtocols(packageId : String)  {
-        DispatchQueue.main.async{
-            self.vpnProtocolService?.getProtocols(packageId: packageId, callBack: { (packageProtocols, bpcException) in
-                if let model = packageProtocols {
+        HelperMethods().appDelegate.bpcManager?.getProtocols(response: { (defaultProtocols, atomExceptions) in
+               if let model = defaultProtocols {
                     self.protocolModel = model
                     self.protocolModel = self.protocolModel.sorted(by: { (Obj1, Obj2) -> Bool in
                         let Obj1_Name = Obj1.protocol ?? ""
@@ -58,8 +33,27 @@ class ProtocolsListingViewModel : BaseViewModel {
                     self.tempProtocolModel = self.protocolModel
                     self.isAnimating.value = false
                     self.isTblViewReload.value = true
+                    BaseViewModel.selectedProtocolSlug.value = self.protocolModel.first?.protocol ?? "IPSEC"
                 }
-            })
-        }
+        })
+    }
+    
+    func getProtocols(packageId : String)  {
+        
+        let packageObj = AtomPackages()
+        packageObj.packageId = packageId
+        HelperMethods().appDelegate.bpcManager?.getProtocolsByPackage(package: packageObj, response: { (packageProtocols, atomException) in
+            if let model = packageProtocols {
+                self.protocolModel = model
+                self.protocolModel = self.protocolModel.sorted(by: { (Obj1, Obj2) -> Bool in
+                    let Obj1_Name = Obj1.protocol ?? ""
+                    let Obj2_Name = Obj2.protocol ?? ""
+                    return (Obj1_Name.localizedCaseInsensitiveCompare(Obj2_Name) == .orderedAscending)
+                })
+                self.tempProtocolModel = self.protocolModel
+                self.isAnimating.value = false
+                self.isTblViewReload.value = true
+            }
+        })
     }
 }

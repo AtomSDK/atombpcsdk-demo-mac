@@ -1,4 +1,0 @@
-framework module AtomBPC {
-  header "AtomBPC-Swift.h"
-  requires objc
-}

@@ -6,7 +6,7 @@
 import Foundation
 import AtomCore
 import AtomBPC
-//import AtomSDK
+import AtomSDK
 
 class AtomValidation {
     
@@ -15,14 +15,14 @@ class AtomValidation {
     func validate(secretKey:String){
         
         self.setupAtomBPCSDK(secretKey: secretKey)
-       // self.setupAtomSDK(secretKey: secretKey)
+        self.setupAtomSDK(secretKey: secretKey)
     }
     
-//    private func setupAtomSDK(secretKey : String){
-//        atomConfig.secretKey = secretKey;
-//        atomConfig.vpnInterfaceName = "AtomBPCDemoApp";
-//        AtomManager.sharedInstance(with: atomConfig)
-//    }
+    private func setupAtomSDK(secretKey : String){
+        atomConfig.secretKey = secretKey;
+        atomConfig.vpnInterfaceName = "AtomBPCDemoApp";
+        AtomManager.sharedInstance(with: atomConfig)
+    }
     
     private func setupAtomBPCSDK(secretKey : String) {
         atomConfig.secretKey = secretKey;

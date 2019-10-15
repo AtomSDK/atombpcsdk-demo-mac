@@ -16,55 +16,50 @@ class CountriesViewModel : BaseViewModel {
     var selectedCountryModel :AtomCountry? = nil
     var isAnimating = Dynamic(false)
     var isTblViewReload = Dynamic(false)
-    
-    private var countriesService : CountriesService!
+    let atomProtocolObj = AtomProtocol()
+    let atomPackageObj = AtomPackages()
     
     override init() {
         super.init()
-        self.resolveDependencies()
-    }
-    
-    private func resolveDependencies(){
-        self.countriesService = referenceContainer.resolve(CountriesService.self)
     }
     
     func getCountries(protocolSlug : String) {
-        DispatchQueue.main.async{
-            self.isAnimating.value = true
-            self.countriesService.getCountries(protocolSlug: protocolSlug) { (allCountries, bpcException) in
-                if let model = allCountries {
-                    self.countriesModel = model
-                    self.countriesModel = self.countriesModel.sorted(by: { (Obj1, Obj2) -> Bool in
-                        let Obj1_Name = Obj1.name ?? ""
-                        let Obj2_Name = Obj2.name ?? ""
-                        return (Obj1_Name.localizedCaseInsensitiveCompare(Obj2_Name) == .orderedAscending)
-                    })
-                    self.tempCountriesModel = self.countriesModel
-                    self.isAnimating.value = false
-                    self.isTblViewReload.value = true
-                    BaseViewModel.selectedCountrySlug.value = self.countriesModel.first?.country ?? ""
-                    BaseViewModel.selectedCountryName.value = self.countriesModel.first?.name ?? ""
-                }
+        atomProtocolObj.protocol = protocolSlug
+        self.isAnimating.value = true
+        HelperMethods().appDelegate.bpcManager?.getCountriesByProtocol(protocol: atomProtocolObj, response: { (allCountries, atomException) in
+            if let model = allCountries {
+                self.countriesModel = model
+                self.countriesModel = self.countriesModel.sorted(by: { (Obj1, Obj2) -> Bool in
+                    let Obj1_Name = Obj1.name ?? ""
+                    let Obj2_Name = Obj2.name ?? ""
+                    return (Obj1_Name.localizedCaseInsensitiveCompare(Obj2_Name) == .orderedAscending)
+                })
+                self.tempCountriesModel = self.countriesModel
+                self.isAnimating.value = false
+                self.isTblViewReload.value = true
             }
-        }
+            BaseViewModel.selectedCountrySlug.value = self.countriesModel.first?.country ?? ""
+            BaseViewModel.selectedCountryName.value = self.countriesModel.first?.name ?? ""
+        })
     }
     
     func getCountries(packageId : String , protocolSlug : String)  {
-        DispatchQueue.main.async{
-            self.isAnimating.value = true
-            self.countriesService.getCountries(packageId: packageId, protocolSlug: protocolSlug) { (countriesModel, exception) in
-                if let model = countriesModel {
-                    self.countriesModel = model
-                    self.countriesModel = self.countriesModel.sorted(by: { (Obj1, Obj2) -> Bool in
-                        let Obj1_Name = Obj1.name ?? ""
-                        let Obj2_Name = Obj2.name ?? ""
-                        return (Obj1_Name.localizedCaseInsensitiveCompare(Obj2_Name) == .orderedAscending)
-                    })
-                    self.tempCountriesModel = self.countriesModel
-                    self.isAnimating.value = false
-                    self.isTblViewReload.value = true
-                }
+        
+        atomProtocolObj.protocol = protocolSlug
+        atomPackageObj.packageId = packageId
+        self.isAnimating.value = true
+        HelperMethods().appDelegate.bpcManager?.getCountriesByPackageAndProtocol(package: atomPackageObj, protocol: atomProtocolObj, response: { (packageCountries, atomException) in
+            if let model = packageCountries {
+                self.countriesModel = model
+                self.countriesModel = self.countriesModel.sorted(by: { (Obj1, Obj2) -> Bool in
+                    let Obj1_Name = Obj1.name ?? ""
+                    let Obj2_Name = Obj2.name ?? ""
+                    return (Obj1_Name.localizedCaseInsensitiveCompare(Obj2_Name) == .orderedAscending)
+                })
+                self.tempCountriesModel = self.countriesModel
+                self.isAnimating.value = false
+                self.isTblViewReload.value = true
             }
-        }
+        })
     }
 }
