@@ -12,7 +12,7 @@ BPC SDK provides the customisable inventory which enables you to offer different
 
 ## Compatibility
 
--   OSX 10.10+
+-   OSX 10.12+
 -   Xcode 11+
 -   ATOM SDK 2.4+
 
@@ -46,7 +46,7 @@ You need to create new *_AtomConfiguration_* object  with help of secret key, pa
 var bpcManager : AtomBPCManager? = nil
 let atomConfiguration = AtomConfiguration()
 atomConfiguration.secretKey = "<#Secret Key#>"
-self.bpcManager = AtomBPCManager.sharedInstanceWith(atomConfiguration: atomConfiguration)
+bpcManager = AtomBPCManager.sharedInstanceWith(atomConfiguration: atomConfiguration)
 ```
 PS: AtomBPCManager is a singleton, and must be initialised before accessing its methods.
   
