@@ -43,10 +43,9 @@ You need to create new *_AtomConfiguration_* object  with help of secret key, pa
 
   
 ``` Swift
-var bpcManager : AtomBPCManager? = nil
 let atomConfiguration = AtomConfiguration()
 atomConfiguration.secretKey = "<#Secret Key#>"
-bpcManager = AtomBPCManager.sharedInstanceWith(atomConfiguration: atomConfiguration)
+AtomBPCManager.sharedInstanceWith(atomConfiguration: atomConfiguration)
 ```
 PS: AtomBPCManager is a singleton, and must be initialised before accessing its methods.
   
@@ -61,7 +60,7 @@ BPC enables you to define and sell your customers your own choice of inventory b
 Call this method to get all packages from your inventory
 
 ``` Swift
-bpcManager?.getPackages(response: { (allPakacges, atomException) in
+AtomBPCManager.sharedInstance()?.getPackages(response: { (allPakacges, atomException) in
  //here you get the all the packages
 })
 ```  
@@ -70,7 +69,7 @@ bpcManager?.getPackages(response: { (allPakacges, atomException) in
 
 This function will retrieve all countries that are associated with a particular package
 ``` Swift
-bpcManager?.getCountriesByPackage(package: <#package#>, response: { (allCountries, atomException) in
+AtomBPCManager.sharedInstance()?.getCountriesByPackage(package: <#package#>, response: { (allCountries, atomException) in
 // here you get all countries assciate with provided package object
 })
 ```
@@ -79,7 +78,7 @@ bpcManager?.getCountriesByPackage(package: <#package#>, response: { (allCountrie
 This function will retrieve all protocols that are associated with a particular package
 
 ``` Swift
-bpcManager?.getProtocolsByPackage(package: <#package#>, response: { (allProtocols, atomException) in
+AtomBPCManager.sharedInstance()?.getProtocolsByPackage(package: <#package#>, response: { (allProtocols, atomException) in
 //here you will get the list of protocols that associate with provided package object
 })
 ```  
@@ -92,7 +91,7 @@ bpcManager?.getProtocolsByPackage(package: <#package#>, response: { (allProtocol
 This function will provide the list of all countries present in your inventory
 
 ``` Swift
-bpcManager?.getCountries(response: { (allCountries, atomException) in
+AtomBPCManager.sharedInstance()?.getCountries(response: { (allCountries, atomException) in
 //here you get the all the countries
 })
 ```  
@@ -102,7 +101,7 @@ bpcManager?.getCountries(response: { (allCountries, atomException) in
 This function will provide you the list of countries that are mapped with a specific protocol
 
 ```Swift
-bpcManager?.getCountriesByProtocol(protocol: <#protocol#>, response: { (allCountries, atomException) in
+AtomBPCManager.sharedInstance()?.getCountriesByProtocol(protocol: <#protocol#>, response: { (allCountries, atomException) in
 //here you get the list of countires that supported by provided protocol object
 })
 ```
@@ -112,7 +111,7 @@ bpcManager?.getCountriesByProtocol(protocol: <#protocol#>, response: { (allCount
 This function will provide the list of all cities present in your inventory
 
 ``` Swift
-bpcManager?.getCities(response: { (allCities, atomException) in
+AtomBPCManager.sharedInstance()?.getCities(response: { (allCities, atomException) in
 //here you get the list of cities, from inventory
 })
 ```
@@ -121,7 +120,7 @@ bpcManager?.getCities(response: { (allCities, atomException) in
 This function will provide you the list of cities that are mapped with a specific protocol
 
 ``` Swift
-bpcManager?.getCitiesByProtocol(protocol: <#protocol#> , response: { (allCities, atomException) in
+AtomBPCManager.sharedInstance()?.getCitiesByProtocol(protocol: <#protocol#> , response: { (allCities, atomException) in
 //here you get the list of cities that supported by provided protocol object
 })
 ```
