@@ -8,7 +8,7 @@
 
 import Foundation
 import AtomCore
-
+import AtomBPC
 class PackagesListingViewModel : BaseViewModel {
     
     var packagesModel = [AtomPackages]()
@@ -23,8 +23,8 @@ class PackagesListingViewModel : BaseViewModel {
     func getPackages()  {
         DispatchQueue.main.async{
             self.isAnimating.value = true
-            
-            HelperMethods().appDelegate.bpcManager?.getPackages(response: { (packagesModel, atomException) in
+          
+            AtomBPCManager.sharedInstance()?.getPackages(response: { (packagesModel, atomException) in
               if let model = packagesModel {
                     self.packagesModel = model
                     self.packagesModel = self.packagesModel.sorted(by: { (Obj1, Obj2) -> Bool in

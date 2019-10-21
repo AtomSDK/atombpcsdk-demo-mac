@@ -1,30 +1,29 @@
 PODS:
   - AtomBPC (1.1.0):
     - AtomCore (~> 1.1.0)
-    - ObjectMapper (~> 3.4.2)
-    - RealmSwift (~> 3.18.0)
-    - Swinject (~> 2.6)
-    - SwinjectAutoregistration (~> 2.6)
+    - ObjectMapper (~> 3.5.1)
+    - RealmSwift (~> 3.19.0)
+    - Swinject (~> 2.7.1)
+    - SwinjectAutoregistration (~> 2.6.1)
   - AtomCore (1.1.0)
   - AtomSDKBySecure (2.4.0):
     - AtomCore (>= 1.0)
-  - ObjectMapper (3.4.2)
-  - Realm (3.18.0):
-    - Realm/Headers (= 3.18.0)
-  - Realm/Headers (3.18.0)
-  - RealmSwift (3.18.0):
-    - Realm (= 3.18.0)
+  - ObjectMapper (3.5.1)
+  - Realm (3.19.0):
+    - Realm/Headers (= 3.19.0)
+  - Realm/Headers (3.19.0)
+  - RealmSwift (3.19.0):
+    - Realm (= 3.19.0)
   - Swinject (2.7.1)
   - SwinjectAutoregistration (2.6.1):
     - Swinject (~> 2.6)
 
 DEPENDENCIES:
-  - AtomBPC
+  - AtomBPC (from `../../../AtomBPC`)
   - AtomSDKBySecure
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - AtomBPC
     - AtomCore
     - AtomSDKBySecure
     - ObjectMapper
@@ -33,16 +32,20 @@ SPEC REPOS:
     - Swinject
     - SwinjectAutoregistration
 
+EXTERNAL SOURCES:
+  AtomBPC:
+    :podspec: "../../../AtomBPC"
+
 SPEC CHECKSUMS:
-  AtomBPC: 46c406a7190d63a85d5456324d795998b8d15787
+  AtomBPC: a8b16fa9539b9a584c3f567475e84ef11680f559
   AtomCore: b9189aa6f3a5e449a6d928a65c960b0d1055b157
   AtomSDKBySecure: 200436ade094b5b030011cc0954cc2768e9f17ab
-  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
-  Realm: 7b3d04740facf45e958a514b466a32b04f1113d6
-  RealmSwift: c817b5f374668cf08f649afb05f55d92a787649c
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  Realm: 995d585bcf699aaff226715886c849a29dd3d07f
+  RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectAutoregistration: d0de7e48db3601b8b130f2f84e5a8399e0224135
 
-PODFILE CHECKSUM: 1afee58b0ce6851aabb640284c570dfda2ff3813
+PODFILE CHECKSUM: 99ae6bf015f03e7e8135a847f40ae2702184305f
 
 COCOAPODS: 1.7.0.beta.3

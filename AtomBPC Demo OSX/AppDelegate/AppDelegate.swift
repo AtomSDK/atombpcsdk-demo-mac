@@ -15,7 +15,6 @@ import SwinjectAutoregistration
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     let dependencyContainer = Container()
-    var bpcManager : AtomBPCManager? = nil
    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
     }

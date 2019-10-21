@@ -8,6 +8,7 @@
 
 import Foundation
 import AtomCore
+import AtomBPC
 
 class CountriesViewModel : BaseViewModel {
     
@@ -26,7 +27,7 @@ class CountriesViewModel : BaseViewModel {
     func getCountries(protocolSlug : String) {
         atomProtocolObj.protocol = protocolSlug
         self.isAnimating.value = true
-        HelperMethods().appDelegate.bpcManager?.getCountriesByProtocol(protocol: atomProtocolObj, response: { (allCountries, atomException) in
+        AtomBPCManager.sharedInstance()?.getCountriesByProtocol(protocol: atomProtocolObj, response: { (allCountries, atomException) in
             if let model = allCountries {
                 self.countriesModel = model
                 self.countriesModel = self.countriesModel.sorted(by: { (Obj1, Obj2) -> Bool in
@@ -48,7 +49,7 @@ class CountriesViewModel : BaseViewModel {
         atomProtocolObj.protocol = protocolSlug
         atomPackageObj.packageId = packageId
         self.isAnimating.value = true
-        HelperMethods().appDelegate.bpcManager?.getCountriesByPackageAndProtocol(package: atomPackageObj, protocol: atomProtocolObj, response: { (packageCountries, atomException) in
+        AtomBPCManager.sharedInstance()?.getCountriesByPackageAndProtocol(package: atomPackageObj, protocol: atomProtocolObj, response: { (packageCountries, atomException) in
             if let model = packageCountries {
                 self.countriesModel = model
                 self.countriesModel = self.countriesModel.sorted(by: { (Obj1, Obj2) -> Bool in
