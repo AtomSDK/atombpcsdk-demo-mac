@@ -8,6 +8,7 @@
 
 import Foundation
 import AtomCore
+import AtomBPC
 
 class ProtocolsListingViewModel : BaseViewModel {
     
@@ -22,7 +23,7 @@ class ProtocolsListingViewModel : BaseViewModel {
     }
     
     func getProtocols() {
-        HelperMethods().appDelegate.bpcManager?.getProtocols(response: { (defaultProtocols, atomExceptions) in
+        AtomBPCManager.sharedInstance()?.getProtocols(response: { (defaultProtocols, atomExceptions) in
                if let model = defaultProtocols {
                     self.protocolModel = model
                     self.protocolModel = self.protocolModel.sorted(by: { (Obj1, Obj2) -> Bool in
@@ -42,7 +43,7 @@ class ProtocolsListingViewModel : BaseViewModel {
         
         let packageObj = AtomPackages()
         packageObj.packageId = packageId
-        HelperMethods().appDelegate.bpcManager?.getProtocolsByPackage(package: packageObj, response: { (packageProtocols, atomException) in
+        AtomBPCManager.sharedInstance()?.getProtocolsByPackage(package: packageObj, response: { (packageProtocols, atomException) in
             if let model = packageProtocols {
                 self.protocolModel = model
                 self.protocolModel = self.protocolModel.sorted(by: { (Obj1, Obj2) -> Bool in

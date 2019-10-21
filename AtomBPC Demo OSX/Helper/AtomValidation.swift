@@ -26,6 +26,6 @@ class AtomValidation {
     
     private func setupAtomBPCSDK(secretKey : String) {
         atomConfig.secretKey = secretKey;
-        HelperMethods().appDelegate.bpcManager = AtomBPCManager.sharedInstanceWith(atomConfiguration: atomConfig)
+        AtomBPCManager.sharedInstanceWith(atomConfiguration: atomConfig)
     }
 }
